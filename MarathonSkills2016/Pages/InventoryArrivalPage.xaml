@@ -17,13 +17,18 @@
 
 		<!-- Header -->
 		<Grid Background="Gray" Grid.Row="0">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-				<Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
-				<TextBlock Text="MARATHON SKILLS 2025" FontSize="28" 
-                           FontWeight="Bold" Foreground="White"/>
-			</StackPanel>
-		</Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+				<Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" Grid.Column="0"
+                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="15" Foreground="White"/>
+				<TextBlock Text="MARATHON SKILLS 2025" FontSize="28" Grid.Column="1"
+                           FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" Grid.Column="2"
+					Background="Transparent" Click="GoBackButton_Click" Width="70" Height="30" Margin="15" Foreground="Transparent" BorderBrush="Transparent"/>
+        </Grid>
 
 		<!-- Main Content -->
 		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

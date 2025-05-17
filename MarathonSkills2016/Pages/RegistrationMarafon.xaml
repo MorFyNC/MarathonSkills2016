@@ -31,10 +31,11 @@
                         Background="Gray"
                         Click="GoBackButton_Click"
                         Content="Назад"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
 
 				<TextBlock Grid.Column="1"
                            VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="White"
@@ -45,8 +46,8 @@
                         Height="40"
                         Background="Gray"
                         Click="LogoutButton_Click"
-                        Content="Logout"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Content="Выйти"
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
 			</Grid>
 		</Border>
 
@@ -172,7 +173,7 @@
                             Background="Gray"
                             Click="CancelBtn_Click"
                             Content="Отмена"
-                            Style="{StaticResource RoundedButtonStyle}"/>
+                            Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
 				</StackPanel>
 			</StackPanel>
 		</ScrollViewer>

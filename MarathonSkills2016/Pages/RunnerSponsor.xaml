@@ -15,35 +15,44 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="Gray">
-            <StackPanel
-                Margin="10"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Orientation="Horizontal">
-                <Button
-                    Width="70"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button
+                    Width="70" Grid.Column="0"
                     Height="30"
-                    Margin="0,0,30,0"
+                    Margin="15"
                     Background="Gray"
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontFamily="Open Sans Light"
-                    Style="{StaticResource RoundedButtonStyle}" />
-                <TextBlock
+                    Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
+                <TextBlock Grid.Column="1"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     FontFamily="Open Sans Semibold "
                     FontSize="28"
                     FontWeight="Bold"
                     Foreground="White"
                     Text="MARATHON SKILLS 2025" />
+            <Button
+        Width="70" Grid.Column="2"
+        Height="30"
+        Margin="15"
+        Background="Transparent"
+        Click="GoBackButton_Click"
+        Content="Назад"
+        FontFamily="Open Sans Light"
+        Style="{StaticResource RoundedButtonStyle}" Foreground="Transparent" BorderBrush="Transparent"/>
 
-            </StackPanel>
         </Grid>
         <StackPanel
             Grid.RowSpan="2"
             Width="708"
             Height="98"
-            Margin="0,50,0,0"
+            Margin="0,60,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top">
             <Label
@@ -191,7 +200,7 @@
                         Background="Gray"
                         Click="Fond_Click"
                         Content="i"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
                 </StackPanel>
                 <TextBlock
                     Margin="0,20,0,0"
@@ -212,7 +221,7 @@
                         Click="BtnMinus_Click"
                         Content="-"
                         FontSize="20"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
                     <TextBox
                         x:Name="MoneyTextBox"
                         Width="59"
@@ -228,7 +237,7 @@
                         Click="BtnPlus_Click"
                         Content="+"
                         FontSize="20"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="white"/>
                 </StackPanel>
                 <StackPanel
                     Margin="0,20,0,0"
@@ -241,7 +250,7 @@
                         Background="Gray"
                         Click="BtnPay_Click"
                         Content="Заплатить"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
                     <Button
                         x:Name="BtnCancel"
                         Width="92"
@@ -250,7 +259,7 @@
                         Background="Gray"
                         Click="BtnCancel_Click"
                         Content="Отмена"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

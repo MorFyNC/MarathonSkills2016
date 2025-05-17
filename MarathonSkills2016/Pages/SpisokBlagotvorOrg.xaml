@@ -34,21 +34,39 @@
 
         <!-- Шапка -->
         <Border Grid.Row="0" Background="Gray" Padding="10">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Button Content="Назад" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Content="Назад" Grid.Column="0"
                         Style="{StaticResource RoundedButtonStyle}" 
                         Background="Gray" 
                         Click="GoBackButton_Click" 
                         Width="120"
                         Height="40"
-                        Margin="20,0,30,0"/>
+                        Margin="15"
+                        Foreground="White"/>
 
-                <TextBlock Text="MARATHON SKILLS 2016" 
+                <TextBlock Text="MARATHON SKILLS 2016" Grid.Column="1"
                            FontSize="24"
                            FontWeight="Bold" 
                            Foreground="White"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <Button Content="Назад" Grid.Column="2"
+                    Style="{StaticResource RoundedButtonStyle}" 
+                    Background="Transparent" 
+                    Click="GoBackButton_Click" 
+                    Width="120"
+                    Height="40"
+                    Margin="15"
+                    Foreground="Transparent"
+                    BorderBrush="Transparent"/>
+            </Grid>
         </Border>
 
         <!-- Основное содержимое -->
@@ -58,8 +76,8 @@
                 <TextBlock Text="Список благотворительных организаций"
                            FontSize="24"
                            FontWeight="Bold"
-                           Foreground="#241D70"
-                           Margin="0,0,0,15"/>
+                           Foreground="Black"
+                           Margin="0,0,0,15" HorizontalAlignment="Center"/>
 
                 <!-- Описание -->
                 <TextBlock Text="Это - список всех благотворительных учреждений, которые поддерживаются в Marathon Skills 2016. Спасибо за помощь вы поддерживаете их, спонсируя бегунов!"

@@ -17,14 +17,17 @@
 
         <!-- Шапка с названием и кнопками -->
         <Grid Background="Gray" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
-                <TextBlock Text="MARATHON SKILLS 2016" FontSize="28" 
-                           FontWeight="Bold" Foreground="White"/>
-                <Button Content="Logout" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="330,0,0,0"/>
-            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
+                    Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0" Foreground="White"/>
+            <TextBlock Grid.Column="1" Text="MARATHON SKILLS 2016" FontSize="28" 
+                        FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+            <Button Grid.Column="2" Content="Выйти" Style="{StaticResource RoundedButtonStyle}" 
+                    Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Foreground="White"/>
         </Grid>
 
         <!-- Фильтры и инструменты -->
@@ -63,10 +66,10 @@
 
                 <!-- Кнопки экспорта -->
                 <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" HorizontalAlignment="Right">
-                    <Button Content="Детальная информация (CSV)" Style="{StaticResource RoundedButtonStyle}" 
+                    <Button Content="Детальная информация (CSV)" Style="{StaticResource RoundedButtonStyle}" Foreground="White" 
                             Background="Gray" Click="ExportDetailsButton_Click" Width="200" Height="30" Margin="0,0,0,5"/>
                     <Button Content="E-mail список" Style="{StaticResource RoundedButtonStyle}" 
-                            Background="Gray" Click="ExportEmailsButton_Click" Width="200" Height="30"/>
+                            Background="Gray" Click="ExportEmailsButton_Click" Width="200" Height="30" Foreground="White"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -88,7 +91,7 @@
                     <ComboBoxItem Content="Статус" Tag="Status"/>
                 </ComboBox>
                 <Button Content="Обновить" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="RefreshButton_Click" Width="100" Height="30" Margin="10,0,0,0"/>
+                        Background="Gray" Click="RefreshButton_Click" Width="100" Height="30" Margin="10,0,0,0" Foreground="white"/>
             </StackPanel>
 
             <!-- Общее количество -->
@@ -108,7 +111,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Редактировать" Style="{StaticResource RoundedButtonStyle}" 
-                                        Background="Gray" Click="EditRunner_Click" Tag="{Binding RunnerId}"/>
+                                        Background="Gray" Click="EditRunner_Click" Tag="{Binding RunnerId}" Foreground="White" Padding="5"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

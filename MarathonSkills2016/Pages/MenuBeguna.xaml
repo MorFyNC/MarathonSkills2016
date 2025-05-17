@@ -5,54 +5,57 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MarathonSkills2016.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450"
       Title="MenuBeguna">
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
-		<Grid Background="Gray" Grid.Row="0">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-				<Button Content="Назад"  FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
-				<TextBlock Text="MARATHON SKILLS 2016" FontFamily="Open Sans Semibold " FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
-				<Button Content="Logout" FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="330,0,0,0"/>
-			</StackPanel>
-		</Grid>
-		<Grid Margin="66,5,66,0" Grid.Row="1" Grid.RowSpan="2">
-			<Label Content="Меню бегуна" HorizontalAlignment="Center" Margin="0,21,0,265" FontSize="24" FontWeight="Bold" Width="168"/>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Gray" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Назад"  FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Foreground="White"/>
+            <TextBlock Grid.Column="1" Text="MARATHON SKILLS 2016" FontFamily="Open Sans Semibold " FontSize="28" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <Button Grid.Column="2" Content="Выйти" FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="LogoutButton_Click" Width="70" Height="30"  Foreground="White"/>
+        </Grid>
+        <Grid Margin="66,5,66,0" Grid.Row="1" Grid.RowSpan="2">
+            <Label Content="Меню бегуна" HorizontalAlignment="Center" Margin="0,21,0,265" FontSize="24" FontWeight="Bold" Width="168"/>
 
-			<Grid Margin="166,76,166,76">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="*"/>
-				</Grid.ColumnDefinitions>
+            <Grid Margin="166,76,166,76">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-				<Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="RegistrationButton_Click" Width="150" Height="55" Margin="5" Grid.Row="0" Grid.Column="0">
-					<TextBlock Text="Регистрация на
-                     марафон" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
-				</Button>
-				<Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="MyResultsButton_Click" Width="150" Height="55" Margin="5" Grid.Row="0" Grid.Column="1">
-					<TextBlock Text="Мои результаты" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
-				</Button>
+                <Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="RegistrationButton_Click" Width="150" Height="55" Margin="5" Grid.Row="0" Grid.Column="0" Foreground="White">
+                    <TextBlock Text="Регистрация на
+                     марафон" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center" ></TextBlock>
+                </Button>
+                <Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="MyResultsButton_Click" Width="150" Height="55" Margin="5" Grid.Row="0" Grid.Column="1" Foreground="White">
+                    <TextBlock Text="Мои результаты" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                </Button>
 
-				<Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="EditProfileButton_Click" Width="150" Height="55" Margin="5" Grid.Row="1" Grid.Column="0">
-					<TextBlock Text="Редактирование
+                <Button FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="EditProfileButton_Click" Width="150" Height="55" Margin="5" Grid.Row="1" Grid.Column="0" Foreground="White">
+                    <TextBlock Text="Редактирование
                                профиля" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
-				</Button>
-				<Button Style="{StaticResource RoundedButtonStyle}" Background="Gray"  Click="MySponsorButton_Click" Width="150" Height="55" Margin="5" Grid.Row="1" Grid.Column="1">
-					<TextBlock Text="Мой спонсор" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
-				</Button>
+                </Button>
+                <Button Style="{StaticResource RoundedButtonStyle}" Background="Gray"  Click="MySponsorButton_Click" Width="150" Height="55" Margin="5" Grid.Row="1" Grid.Column="1" Foreground="White">
+                    <TextBlock Text="Мой спонсор" FontFamily="Open Sans Light" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                </Button>
 
-				<Button Content="Контакты" FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="ContactsButton_Click" Width="150" Height="55" Margin="5" Grid.Row="2" Grid.Column="0"/>
-			</Grid>
-		</Grid>
-	</Grid>
+                <Button Content="Контакты" FontFamily="Open Sans Light" Style="{StaticResource RoundedButtonStyle}" Background="Gray" Click="ContactsButton_Click" Width="150" Height="55" Margin="5" Grid.Row="2" Grid.Column="0" Foreground="White"/>
+            </Grid>
+        </Grid>
+    </Grid>
 </Page>

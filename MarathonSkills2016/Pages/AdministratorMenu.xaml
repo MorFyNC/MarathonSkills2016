@@ -8,21 +8,21 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AdministratorMenu">
 
-	<DockPanel Background="White" LastChildFill="True">
-		<!--  Верхняя панель  -->
-		<Border
+    <DockPanel Background="White" LastChildFill="True">
+        <!--  Верхняя панель  -->
+        <Border
             Height="80"
             Background="Gray"
             DockPanel.Dock="Top">
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="Auto" />
-				</Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-				<!--  Кнопка Назад  -->
-				<Button
+                <!--  Кнопка Назад  -->
+                <Button
                     Grid.Column="0"
                     Width="120"
                     Height="40"
@@ -32,10 +32,10 @@
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontWeight="Bold"
-                    Foreground="Black" />
+                    Foreground="White" />
 
-				<!--  Заголовок  -->
-				<TextBlock
+                <!--  Заголовок  -->
+                <TextBlock
                     Grid.Column="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
@@ -44,8 +44,8 @@
                     Foreground="White"
                     Text="MARATHON SKILLS 2025" />
 
-				<!--  Кнопка Выйти  -->
-				<Button
+                <!--  Кнопка Выйти  -->
+                <Button
                     Grid.Column="2"
                     Width="120"
                     Height="40"
@@ -55,58 +55,56 @@
                     Click="LogoutButton_Click"
                     Content="Выйти"
                     FontWeight="Bold"
-                    Foreground="Black" />
-			</Grid>
-		</Border>
+                    Foreground="White" />
+            </Grid>
+        </Border>
 
-		<!--  Основное содержимое  -->
-		<ScrollViewer Padding="25">
-			<StackPanel HorizontalAlignment="Center">
-				<!--  Заголовок меню  -->
-				<TextBlock
+        <!--  Основное содержимое  -->
+            <StackPanel HorizontalAlignment="Center">
+                <!--  Заголовок меню  -->
+                <TextBlock
                     Margin="0,20,0,40"
                     HorizontalAlignment="Center"
                     FontSize="28"
                     FontWeight="Bold"
-                    Foreground="#241D70"
+                    Foreground="Black"
                     Text="Меню администратора" />
 
-				<!--  Кнопки меню  -->
-				<UniformGrid
+                <!--  Кнопки меню  -->
+                <UniformGrid
                     Width="700"
                     HorizontalAlignment="Center"
                     Columns="2">
-					<!--  Пользователи  -->
-					<Button
+                    <!--  Пользователи  -->
+                    <Button
                         Margin="15"
                         Click="UsersButton_Click"
                         Content="Пользователи"
                         Style="{StaticResource AdminMenuButtonStyle}" />
 
-					<!--  Волонтеры  -->
-					<Button
+                    <!--  Волонтеры  -->
+                    <Button
                         Margin="15"
                         Click="VolonteursButton_Click"
                         Content="Волонтеры"
                         Style="{StaticResource AdminMenuButtonStyle}" />
 
-					<!--  Благотворительные организации  -->
-					<Button
+                    <!--  Благотворительные организации  -->
+                    <Button
                         Margin="15"
                         Click="OrgsButton_Click"
                         Content="Благотворительные организации"
                         Style="{StaticResource AdminMenuButtonStyle}" />
 
-					<!--  Инвентарь  -->
-					<Button
+                    <!--  Инвентарь  -->
+                    <Button
                         Margin="15"
                         Click="InventoryButton_Click"
                         Content="Инвентарь"
                         Style="{StaticResource AdminMenuButtonStyle}" />
 
-					<!--  Добавьте дополнительные кнопки по необходимости  -->
-				</UniformGrid>
-			</StackPanel>
-		</ScrollViewer>
-	</DockPanel>
+                    <!--  Добавьте дополнительные кнопки по необходимости  -->
+                </UniformGrid>
+            </StackPanel>
+    </DockPanel>
 </Page>

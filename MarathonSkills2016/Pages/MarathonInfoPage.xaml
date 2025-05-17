@@ -42,7 +42,7 @@
                         Click="GoBackButton_Click"
                         Content="Назад"
                         FontWeight="Bold"
-                        Foreground="Black"/>
+                        Foreground="White"/>
 
 				<TextBlock Grid.Column="1"
                            HorizontalAlignment="Center"
@@ -51,7 +51,20 @@
                            FontWeight="Bold"
                            Foreground="White"
                            Text="MARATHON SKILLS 2016"/>
-			</Grid>
+                <Button Grid.Column="2"
+                    Width="120"
+                    Height="40"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    FontWeight="Bold"
+                    Foreground="Transparent"
+                    BorderBrush="Transparent"/>
+            </Grid>
+            
+
 		</Border>
 
 		<!-- Подзаголовок -->
@@ -67,23 +80,20 @@
 		<ScrollViewer Grid.Row="2" Grid.Column="0" VerticalScrollBarVisibility="Auto" Margin="10">
 			<StackPanel>
 				<!-- Карта марафона -->
-				<TextBlock Text="Карта марафона" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+				<TextBlock Text="Карта марафона" FontWeight="Bold" FontSize="16" Margin="0,0,0,5" HorizontalAlignment="Center"/>
 				<Button Click="MapButton_Click" Background="Transparent" BorderThickness="0">
 					<Image Source="/Info/marathon-skills-2016-marathon-map.jpg" 
                            Stretch="Uniform" 
                            Width="280" 
                            Margin="0,0,0,20"/>
 				</Button>
-				<TextBlock Text="(Нажмите чтобы открыть интерактивную карту)" 
-                           FontStyle="Italic" 
-                           HorizontalAlignment="Center"
-                           Margin="0,0,0,20"/>
 
-				<!-- Фотографии -->
+                <!-- Фотографии -->
 				<TextBlock Text="Фотографии с прошлых марафонов:" 
                            FontWeight="Bold" 
                            FontSize="16" 
-                           Margin="0,0,0,10"/>
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Center"/>
 
 				<Image Source="/Info/Photo/banco-banespa.jpg" 
                        Width="280" 

@@ -16,14 +16,12 @@
 
         <!-- Header -->
         <Grid Background="Gray" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
+                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" Foreground="White"
+                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="30,0,0,0" HorizontalAlignment="Left"/>
                 <TextBlock Text="MARATHON SKILLS 2025" FontSize="28" 
-                           FontWeight="Bold" Foreground="White"/>
-                <Button Content="Logout" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="330,0,0,0"/>
-            </StackPanel>
+                           FontWeight="Bold" Foreground="White" HorizontalAlignment="center"/>
+                <Button Content="Выйти" Style="{StaticResource RoundedButtonStyle}" Foreground="White" HorizontalAlignment="Right"
+                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
         </Grid>
 
         <!-- Main Content -->
@@ -108,8 +106,8 @@
                             Click="ReportButton_Click" Margin="0,0,20,0"/>
                     <Button Content="Приход" Style="{StaticResource RoundedButtonStyle}" 
                             Background="Gray" Width="120" Height="35"
-                            Click="ArrivalButton_Click"/>
-                </StackPanel>
+                            Click="ArrivalButton_Click" Foreground="white"/>
+                </StackPanel> 
             </StackPanel>
         </ScrollViewer>
 

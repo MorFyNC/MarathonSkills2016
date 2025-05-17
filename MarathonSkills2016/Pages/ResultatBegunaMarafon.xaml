@@ -17,14 +17,17 @@
 
         <!-- Шапка с названием и кнопками -->
         <Grid Background="Gray" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
-                <TextBlock Text="MARATHON SKILLS 2016" FontSize="28" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" Grid.Column="0"
+                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="15" Foreground="White"/>
+                <TextBlock Text="MARATHON SKILLS 2016" FontSize="28" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontWeight="Bold" Foreground="White"/>
-                <Button Content="Logout" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="330,0,0,0"/>
-            </StackPanel>
+                <Button Content="Выйти" Style="{StaticResource RoundedButtonStyle}" Grid.Column="2"
+                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="15" Foreground="White"/>
         </Grid>
 
         <!-- Основное содержимое -->
@@ -73,7 +76,7 @@
                 <!-- Кнопка "Показать все результаты" -->
                 <Button Content="Показать все результаты" Style="{StaticResource RoundedButtonStyle}" 
                         Background="Gray" Click="ShowAllResultsButton_Click" 
-                        Width="200" Height="35" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        Width="200" Height="35" HorizontalAlignment="Center" Margin="0,10,0,0" Foreground="White"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

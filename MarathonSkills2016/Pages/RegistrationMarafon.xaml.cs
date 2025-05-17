@@ -13,7 +13,6 @@ namespace MarathonSkills2016.Pages
 {
     public partial class RegistrationMarafon : Page
     {
-        // Классы для привязки данных
         public class EventTypeViewModel
         {
             public string EventTypeId { get; set; }
@@ -48,9 +47,11 @@ namespace MarathonSkills2016.Pages
         {
             try
             {
+                var eventsData = ConnectionString.connection.Event.ToList();
+                var eventTypesData = ConnectionString.connection.EventType.ToList();
                 // Загрузка типов событий
-                var eventTypes = ConnectionString.connection.Event
-                    .Join(ConnectionString.connection.EventType,
+                var eventTypes = eventsData
+                    .Join(eventTypesData,
                         e => e.EventTypeId,
                         et => et.EventTypeId,
                         (e, et) => new EventTypeViewModel
@@ -65,8 +66,10 @@ namespace MarathonSkills2016.Pages
 
                 EventsList.ItemsSource = eventTypes;
 
+                var kitOptionsData = ConnectionString.connection.RaceKitOption.ToList();
+
                 // Загрузка вариантов комплектов
-                var kitOptions = ConnectionString.connection.RaceKitOption
+                var kitOptions = kitOptionsData
                     .Select(r => new RaceKitOptionViewModel
                     {
                         RaceKitOptionId = r.RaceKitOptionId,
@@ -126,9 +129,9 @@ namespace MarathonSkills2016.Pages
         {
             try
             {
+                var usersData = ConnectionString.connection.User.Include(u => u.Runner);
                 // 1. Получаем текущего пользователя и проверяем наличие профиля бегуна
-                var currentUser = ConnectionString.connection.User
-                                .Include(u => u.Runner) // Важно: подгружаем связанные данные
+                var currentUser = usersData
                                 .FirstOrDefault(u => u.Email == CurrentUser.Email);
 
                 if (currentUser == null || currentUser.Runner == null || currentUser.Runner.Count == 0)
@@ -192,9 +195,9 @@ namespace MarathonSkills2016.Pages
                         "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-
+                var registrationsData = ConnectionString.connection.Registration.ToList();
                 // 6. Проверка на существующую регистрацию
-                var existingRegistration = ConnectionString.connection.Registration
+                var existingRegistration = registrationsData
                     .FirstOrDefault(r => r.RunnerId == runner.RunnerId &&
                                        (r.RegistrationStatusId == 1 || r.RegistrationStatusId == 2)); // 1 = "Pending", 2 = "Confirmed"
 
@@ -226,7 +229,8 @@ namespace MarathonSkills2016.Pages
                 // 9. Добавляем выбранные события
                 foreach (var eventType in selectedEvents)
                 {
-                    var eventObj = ConnectionString.connection.Event
+                    var eventData = ConnectionString.connection.Event.ToList();
+                    var eventObj = eventData
                         .FirstOrDefault(ev => ev.EventTypeId == eventType.EventTypeId);
 
                     if (eventObj != null)

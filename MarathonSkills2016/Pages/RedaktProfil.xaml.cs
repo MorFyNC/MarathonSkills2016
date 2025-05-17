@@ -47,7 +47,7 @@ namespace MarathonSkills2016.Pages
             if (currentUser != null && currentRunner != null)
             {
                 // Заполняем поля данными из базы
-                EmailTxt.Content = currentUser.Email;
+                EmailTxt.Text = currentUser.Email;
                 NameTxt.Text = currentUser.FirstName;
                 SecondNameTxt.Text = currentUser.LastName;
 

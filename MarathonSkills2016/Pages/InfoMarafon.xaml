@@ -38,28 +38,31 @@
 
 		<!-- Верхняя панель -->
 		<Grid Background="Gray" Grid.Row="0" Grid.ColumnSpan="7">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-				<Button Content="Назад" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Назад" 
                         FontFamily="Open Sans Light" 
                         Style="{StaticResource RoundedButtonStyle}" 
                         Background="Gray" 
                         Click="GoBackButton_Click" 
                         Width="70" 
                         Height="30" 
-                        Margin="0,0,30,0"/>
-				<TextBlock Text="MARATHON SKILLS 2016" 
-                           FontFamily="Open Sans Semibold" 
-                           FontSize="28" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center"/>
-			</StackPanel>
-			<Button Content="Logout" 
+                        Margin="5" Foreground="White"/>
+            <TextBlock Text="MARATHON SKILLS 2016" 
+                        FontFamily="Open Sans Semibold" 
+                        FontSize="28" 
+                        FontWeight="Bold" 
+                        Foreground="White" 
+                        HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center"/>
+            <Button Content="Logout" 
                     FontFamily="Open Sans Light" 
                     Style="{StaticResource RoundedButtonStyle}" 
-                    Background="Gray" 
+                    Background="Transparent" 
                     Click="LogoutButton_Click" 
-                    Margin="720,10,10,14"/>
+                    Margin="15" Grid.Column="2" Foreground="Transparent" BorderBrush="Transparent"/>
 		</Grid>
 
 		<TextBlock Margin="124,10" TextWrapping="Wrap" FontSize="22" Foreground="Black" TextAlignment="Center" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="1" Text="Насколько долгий марафон?"/>

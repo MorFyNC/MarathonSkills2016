@@ -17,6 +17,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <!--  Кнопка Назад  -->
@@ -30,14 +31,26 @@
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontWeight="Bold"
-                    Foreground="Black"
+                    Foreground="White"
                     Style="{StaticResource RoundedButtonStyle}" />
+                <Button
+                    Grid.Column="2"
+                    Width="120"
+                    Height="40"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    FontWeight="Bold"
+                    Foreground="Transparent"
+                    Style="{StaticResource RoundedButtonStyle}" 
+                    BorderBrush="Transparent"/>
 
                 <!--  Заголовок  -->
                 <TextBlock
                     Grid.Column="1"
-                    Margin="115,0,0,0"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="24"
                     FontWeight="Bold"
@@ -74,13 +87,13 @@
                         HorizontalAlignment="Center"
                         FontSize="24"
                         FontWeight="Bold"
-                        Foreground="#241D70"
+                        Foreground="Black"
                         Text="Форма авторизации" />
 
                     <TextBlock
                         Margin="0,0,0,30"
                         FontSize="14"
-                        Foreground="#241D70"
+                        Foreground="Black"
                         Text="Пожалуйста, авторизуйтесь в системе, используя ваш адрес электронной почты и пароль."
                         TextAlignment="Center"
                         TextWrapping="Wrap" />
@@ -154,7 +167,7 @@
                             Click="CancelButton_Click"
                             Content="Отмена"
                             FontWeight="Bold"
-                            Foreground="Black"
+                            Foreground="White"
                             Style="{StaticResource RoundedButtonStyle}" />
                     </StackPanel>
                 </StackPanel>

@@ -19,7 +19,7 @@
                 <Button Grid.Column="0" Width="120" Height="40" Margin="20,0,0,0"
                         VerticalAlignment="Center" Background="Gray"
                         Click="GoBackButton_Click" Content="Назад"
-                        FontWeight="Bold" Foreground="Black"
+                        FontWeight="Bold" Foreground="white"
                         Style="{StaticResource RoundedButtonStyle}" />
 
                 <TextBlock Grid.Column="1" Margin="115,0,0,0"
@@ -32,8 +32,8 @@
         <!-- Нижняя панель -->
         <Border Height="60" Background="Gray" DockPanel.Dock="Bottom">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                       FontSize="16" FontWeight="Bold" Foreground="Black"
-                       Text="18 дней 8 часов и 17 минут до старта марафона!" />
+                       FontSize="16" FontWeight="Bold" Foreground="White"
+                       Text="Марафон уже начался!" />
         </Border>
 
         <!-- Основное содержимое -->
@@ -83,7 +83,7 @@
                             Foreground="White" FontWeight="Bold" Click="CalculateButton_Click"
                             Style="{StaticResource RoundedButtonStyle}"/>
                     <Button Content="Отмена" Width="120" Height="40" Background="Gray"
-                            Foreground="Black" FontWeight="Bold" Margin="20,0,0,0"
+                            Foreground="White" FontWeight="Bold" Margin="20,0,0,0"
                             Click="CancelButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
                 </StackPanel>
 

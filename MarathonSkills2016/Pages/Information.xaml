@@ -73,13 +73,23 @@
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontWeight="Bold"
-                    Foreground="Black" />
+                    Foreground="White" /> 
+                <Button
+                    Grid.Column="2"
+                    Width="120"
+                    Height="40"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    FontWeight="Bold"
+                    Foreground="Transparent" BorderBrush="Transparent"/>
 
                 <!--  Заголовок  -->
                 <TextBlock
                     Grid.Column="1"
-                    Margin="115,0,0,0"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="24"
                     FontWeight="Bold"
@@ -98,19 +108,18 @@
                 HorizontalAlignment="Center"
                 FontSize="24"
                 FontWeight="Bold"
-                Foreground="#241D70"
+                Foreground="Black"
                 Text="Подробная информация" />
 
             <!--  Две колонки с кнопками  -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="15" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <!--  Левая колонка  -->
-                <StackPanel Grid.Column="0">
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
                     <Button Click="MarathonSkillsButton_Click" Style="{StaticResource RoundedButtonStyle}">
                         <TextBlock
                             Padding="10"
@@ -140,7 +149,7 @@
                 </StackPanel>
 
                 <!--  Правая колонка  -->
-                <StackPanel Grid.Column="2">
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
                     <Button Click="HowLongButton_Click" Style="{StaticResource RoundedButtonStyle}">
                         <TextBlock
                             Padding="10"

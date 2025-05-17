@@ -17,6 +17,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Кнопка Назад -->
@@ -24,25 +25,37 @@
                     Grid.Column="0"
                     Width="120"
                     Height="40"
-                    Margin="20,0,0,0"
+                    Margin="15"
                     VerticalAlignment="Center"
                     Background="Gray"
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontWeight="Bold"
-                    Foreground="Black"
+                    Foreground="White"
                     Style="{StaticResource RoundedButtonStyle}" />
 
                 <!-- Заголовок -->
                 <TextBlock
                     Grid.Column="1"
-                    Margin="115,0,0,0"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontSize="24"
                     FontWeight="Bold"
                     Foreground="White"
                     Text="MARATHON SKILLS 2016" />
+                <Button
+                    Grid.Column="2"
+                    BorderBrush="Transparent"
+                    Width="120"
+                    Height="40"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    FontWeight="Bold"
+                    Foreground="Transparent"
+                    Style="{StaticResource RoundedButtonStyle}" />
             </Grid>
         </Border>
 
@@ -196,7 +209,7 @@
                             Click="CancelButton_Click"
                             Content="Отмена"
                             FontWeight="Bold"
-                            Foreground="Black"
+                            Foreground="White"
                             Style="{StaticResource RoundedButtonStyle}" />
                     </StackPanel>
                 </StackPanel>

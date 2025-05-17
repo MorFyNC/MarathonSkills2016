@@ -109,7 +109,7 @@
             HorizontalAlignment="Right"
             Background="Gray"
             Click="LoginButton_Click"
-            Content="Login"
+            Content="Войти"
             FontFamily="Open Sans Light"
             Foreground="White"
             Style="{StaticResource RoundedButtonStyle}" />

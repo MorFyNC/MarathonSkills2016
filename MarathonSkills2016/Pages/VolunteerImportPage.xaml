@@ -18,6 +18,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Кнопка Назад -->
@@ -25,13 +26,13 @@
                     Grid.Column="0"
                     Width="120"
                     Height="40"
-                    Margin="20,0,0,0"
+                    Margin="15"
                     VerticalAlignment="Center"
                     Background="Gray"
                     Click="GoBackButton_Click"
                     Content="Назад"
                     FontWeight="Bold"
-                    Foreground="Black"
+                    Foreground="White"
                     Style="{StaticResource RoundedButtonStyle}" />
 
                 <!-- Заголовок -->
@@ -44,6 +45,18 @@
                     FontWeight="Bold"
                     Foreground="White"
                     Text="MARATHON SKILLS 2016" />
+                <Button
+                    Grid.Column="2"
+                    Width="120"
+                    Height="40"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    FontWeight="Bold"
+                    Foreground="Transparent"
+                    Style="{StaticResource RoundedButtonStyle}" BorderBrush="Transparent"/>
             </Grid>
         </Border>
 
@@ -77,7 +90,7 @@
                         HorizontalAlignment="Center"
                         FontSize="20"
                         FontWeight="Bold"
-                        Foreground="#241D70"
+                        Foreground="Black"
                         Text="Загрузка волонтеров" />
 
                     <!-- CSV файл -->
@@ -85,7 +98,7 @@
                         Margin="0,0,0,5"
                         FontSize="14"
                         FontWeight="Bold"
-                        Foreground="#241D70"
+                        Foreground="Black"
                         Text="CSV файл волонтеров:" />
 
                     <Grid>
@@ -139,7 +152,7 @@
                             Click="CancelButton_Click"
                             Content="Отмена"
                             FontWeight="Bold"
-                            Foreground="Black"
+                            Foreground="White"
                             Style="{StaticResource RoundedButtonStyle}" />
                     </StackPanel>
 
@@ -148,7 +161,7 @@
                         Margin="0,30,0,5"
                         FontSize="14"
                         FontWeight="Bold"
-                        Foreground="#241D70"
+                        Foreground="Black"
                         Text="CSV файл должен иметь следующие поля:" />
 
                     <StackPanel Margin="10">

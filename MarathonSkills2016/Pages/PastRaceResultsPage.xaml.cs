@@ -77,7 +77,7 @@ namespace MarathonSkills2016.Pages
         {
             // Сначала получаем все результаты без фильтрации по возрасту
             var query = ConnectionString.connection.RegistrationEvent
-                .Where(re => re.RaceTime.HasValue)
+                .Where(re => re.RaceTime.HasValue && re.RaceTime != 0)
                 .AsQueryable();
 
             // Фильтр по марафону

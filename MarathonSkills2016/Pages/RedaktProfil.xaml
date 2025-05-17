@@ -19,24 +19,38 @@
 		</Grid.RowDefinitions>
 
 		<!-- Шапка -->
-		<Border Grid.Row="0" Background="Gray" Padding="10">
-			<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-				<Button
-                    Width="120"
+		<Border Grid.Row="0" Background="Gray">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Width="120" Grid.Column="0"
                     Height="40"
-                    Margin="20,0,30,0"
+                    Margin="15"
                     Background="Gray"
                     Click="GoBackButton_Click"
                     Content="Назад"
-                    Style="{StaticResource RoundedButtonStyle}" />
+                    Style="{StaticResource RoundedButtonStyle}" Foreground="White" />
 
-				<TextBlock
+				<TextBlock Grid.Column="1"
                     FontSize="24"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="MARATHON SKILLS 2025"
-                    VerticalAlignment="Center" />
-			</StackPanel>
+                    Text="MARATHON SKILLS 2016"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Button
+                    Width="120" Grid.Column="2"
+                    Height="40"
+                    Margin="15"
+                    Background="Transparent"
+                    Click="GoBackButton_Click"
+                    Content="Назад"
+                    Style="{StaticResource RoundedButtonStyle}" Foreground="Transparent" BorderBrush="Transparent" />
+            </Grid>
 		</Border>
 
 		<!-- Основное содержимое -->
@@ -46,139 +60,89 @@
 					<ColumnDefinition Width="*" />
 					<ColumnDefinition Width="*" />
 				</Grid.ColumnDefinitions>
+                
+                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5">
+                    <Label Content="Редактирование профиля"
+					   FontSize="24"
+					   FontWeight="Bold"
+					   Margin="0,0,0,20"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Email:" HorizontalAlignment="Right"
+					           VerticalAlignment="Center"/>
+                            <Label Content="Имя:" HorizontalAlignment="Right"
+				               VerticalAlignment="Center"/>
+                            <Label Content="Фамилия:" HorizontalAlignment="Right"
+                               VerticalAlignment="Center"/>
+                            <Label Content="Пол:" HorizontalAlignment="Right"
+                               VerticalAlignment="Center"/>
+                            <Label Content="Дата рождения:" HorizontalAlignment="Right"
+                               VerticalAlignment="Center"/>
+                            <Label Content="Страна:" HorizontalAlignment="Right"
+                               VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox x:Name="EmailTxt"
+Grid.Column="1"
+Text="Почта"
+FontStyle="Italic"
+Foreground="#FF878787" Height="26.1" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="NameTxt" Height="26.1" VerticalContentAlignment="Center"
+                Grid.Column="1"
+                Text="Имя"
+                FontStyle="Italic"
+                Foreground="#FF878787"/>
 
-				<!-- Левая колонка -->
-				<StackPanel Grid.Column="0" Margin="0,0,20,0">
-					<Label Content="Редактирование профиля"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Margin="0,0,0,20"/>
 
-					<!-- Email -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
 
-						<Label Content="Email:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
+                            <TextBox x:Name="SecondNameTxt"
+                Grid.Column="1"
+                Text="Фамилия"
+                FontStyle="Italic"
+                Foreground="#FF878787" Height="26.1" VerticalContentAlignment="Center"/>
 
-						<Label x:Name="EmailTxt"
-                               Grid.Column="1"
-                               Content="the.email@address.com"
-                               FontStyle="Italic"
-                               Foreground="#FF878787" />
-					</Grid>
 
-					<!-- Имя -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
+                            <ComboBox x:Name="CmbxGender"
+                 Grid.Column="1"
+                 SelectedIndex="0"
+                 Foreground="Gray"
+                 GotFocus="CmbxGender_GotFocus" Height="26.1" VerticalContentAlignment="Center">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Gender1}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
-						<Label Content="Имя:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
 
-						<TextBox x:Name="NameTxt"
-                                Grid.Column="1"
-                                Text="Имя"
-                                FontStyle="Italic"
-                                Foreground="#FF878787"
-                                GotFocus="NameTxt_GotFocus"
-                                LostFocus="NameTxt_LostFocus"/>
-					</Grid>
 
-					<!-- Фамилия -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
+                            <DatePicker x:Name="BirthDate"
+                   Grid.Column="1"
+                   SelectedDateChanged="BirthDate_SelectedDateChanged" Height="26.1" VerticalContentAlignment="Center"/>
 
-						<Label Content="Фамилия:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
 
-						<TextBox x:Name="SecondNameTxt"
-                                Grid.Column="1"
-                                Text="Фамилия"
-                                FontStyle="Italic"
-                                Foreground="#FF878787"
-                                GotFocus="SecondNameTxt_GotFocus"
-                                LostFocus="SecondNameTxt_LostFocus"/>
-					</Grid>
 
-					<!-- Пол -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
+                            <ComboBox x:Name="CmbxCountry"
+                 Grid.Column="1"
+                 SelectedIndex="77"
+                 FontStyle="Italic"
+                 Foreground="Gray"
+                 GotFocus="CmbxCountry_GotFocus" Height="26.1" VerticalContentAlignment="Center">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding CountryName}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                
+	
 
-						<Label Content="Пол:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
+                
 
-						<ComboBox x:Name="CmbxGender"
-                                 Grid.Column="1"
-                                 SelectedIndex="0"
-                                 Foreground="Gray"
-                                 GotFocus="CmbxGender_GotFocus">
-							<ComboBox.ItemTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding Gender1}" />
-								</DataTemplate>
-							</ComboBox.ItemTemplate>
-						</ComboBox>
-					</Grid>
-
-					<!-- Дата рождения -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
-
-						<Label Content="Дата рождения:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
-
-						<DatePicker x:Name="BirthDate"
-                                   Grid.Column="1"
-                                   SelectedDateChanged="BirthDate_SelectedDateChanged"/>
-					</Grid>
-
-					<!-- Страна -->
-					<Grid Margin="0,0,0,15">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
-
-						<Label Content="Страна:"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
-
-						<ComboBox x:Name="CmbxCountry"
-                                 Grid.Column="1"
-                                 SelectedIndex="77"
-                                 FontStyle="Italic"
-                                 Foreground="Gray"
-                                 GotFocus="CmbxCountry_GotFocus">
-							<ComboBox.ItemTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding CountryName}" />
-								</DataTemplate>
-							</ComboBox.ItemTemplate>
-						</ComboBox>
-					</Grid>
-				</StackPanel>
-
-				<!-- Правая колонка -->
+                <!-- Правая колонка -->
 				<StackPanel Grid.Column="1">
 					<!-- Фото профиля -->
 					<Border x:Name="BorderBg"
@@ -195,7 +159,7 @@
 					</Border>
 
 					<!-- Загрузка фото -->
-					<Grid Margin="0,0,0,20">
+					<Grid>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto" />
 							<ColumnDefinition Width="*" />
@@ -223,13 +187,12 @@
                                Background="Gray"
                                Click="BtnFile_Click"
                                Content="Просмотр..."
-                               Style="{StaticResource RoundedButtonStyle}"/>
+                               Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
 					</Grid>
 
 					<!-- Смена пароля -->
 					<Label Content="Смена пароля"
-                           FontWeight="Bold"
-                           Margin="0,20,0,10"/>
+                           FontWeight="Bold"/>
 
 					<TextBlock Text="Оставьте эти поля незаполненными, если вы не хотите изменять пароль."
                               TextWrapping="Wrap"
@@ -290,7 +253,7 @@
 		<StackPanel Grid.Row="1" 
                    Orientation="Horizontal" 
                    HorizontalAlignment="Center"
-                   Margin="0,417,0,81" Grid.RowSpan="2">
+                   Margin="0,350,0,81" Grid.RowSpan="2">
 			<Button Width="120"
                    Height="40"
                    Margin="0,0,20,0"
@@ -305,7 +268,7 @@
                    Background="Gray"
                    Click="CancelButton_Click"
                    Content="Отмена"
-                   Style="{StaticResource RoundedButtonStyle}"/>
+                   Style="{StaticResource RoundedButtonStyle}" Foreground="White"/>
 		</StackPanel>
 
 		<!-- Подвал -->

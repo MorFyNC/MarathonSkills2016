@@ -15,21 +15,28 @@
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="auto"/>
 				</Grid.ColumnDefinitions>
 
 				<!-- Кнопка Назад -->
-				<Button Grid.Column="0" Width="120" Height="40" Margin="20,0,0,0"
+				<Button Grid.Column="0" Width="120" Height="40" Margin="15"
                         VerticalAlignment="Center" Background="Gray"
                         Click="GoBackButton_Click" Content="Назад"
-                        FontWeight="Bold" Foreground="Black"
+                        FontWeight="Bold" Foreground="White"
                         Style="{StaticResource RoundedButtonStyle}"/>
 
 				<!-- Заголовок -->
-				<TextBlock Grid.Column="1" Margin="115,0,0,0"
-                           HorizontalAlignment="Left" VerticalAlignment="Center"
+                <TextBlock Grid.Column="1"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="24" FontWeight="Bold" Foreground="White"
                            Text="MARATHON SKILLS 2025"/>
-			</Grid>
+
+                <Button Grid.Column="2" Width="120" Height="40" Margin="15"
+					VerticalAlignment="Center" Background="Transparent" BorderBrush="Transparent"
+					Click="GoBackButton_Click" Content="Назад"
+					FontWeight="Bold" Foreground="Transparent"
+					Style="{StaticResource RoundedButtonStyle}"/>
+            </Grid>
 		</Border>
 
 		<!-- Нижняя панель с таймером -->
@@ -44,7 +51,7 @@
 		<ScrollViewer VerticalScrollBarVisibility="Auto" Padding="20">
 			<StackPanel>
 				<TextBlock Text="Управление бегуном" 
-                           FontSize="24" FontWeight="Bold" Foreground="#241D70"
+                           FontSize="24" FontWeight="Bold" Foreground="Black"
                            HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
 				<!-- Основная информация -->
@@ -132,7 +139,7 @@
                             Foreground="White" Style="{StaticResource RoundedButtonStyle}"/>
 					<Button Width="180" Height="40" Margin="20,0,0,0" Background="Gray"
                             Content="Печать бейджа" FontWeight="Bold"
-                            Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+                            Foreground="White" Style="{StaticResource RoundedButtonStyle}"/>
 				</StackPanel>
 
 				<!-- Разделитель -->

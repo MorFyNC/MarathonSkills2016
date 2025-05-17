@@ -34,12 +34,13 @@
                 HorizontalAlignment="Center"
                 FontSize="24"
                 FontWeight="Bold"
-                Foreground="#241D70"
+                Foreground="Black"
                 Text="Спасибо за вашу спонсорскую поддержку!" />
 
             <TextBlock
                 Margin="0,0,0,10"
                 HorizontalAlignment="Center"
+                TextAlignment="Center"
                 FontSize="16"
                 Text="Спасибо за поддержку бегуна в Marathon Skills 2025!                        Ваше пожертвование пойдет в его благотворительную организацию."
                 TextWrapping="Wrap" />
@@ -81,13 +82,14 @@
                 Width="120"
                 Height="40"
                 HorizontalAlignment="Center"
-                Background="White"
+                Background="Gray"
+                Style="{StaticResource RoundedButtonStyle}"
                 BorderBrush="Gray"
                 BorderThickness="1"
                 Click="GoBackButton_Click"
                 Content="Назад"
                 FontSize="16"
-                Foreground="#241D70" />
+                Foreground="White" />
         </StackPanel>
 
         <!--  Таймер до старта  -->

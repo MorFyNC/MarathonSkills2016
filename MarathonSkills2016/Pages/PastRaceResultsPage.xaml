@@ -17,14 +17,17 @@
 
         <!-- Шапка с названием и кнопками -->
         <Grid Background="Gray" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-                <Button Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="0,0,30,0"/>
-                <TextBlock Text="MARATHON SKILLS 2016" FontSize="28" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Назад" Style="{StaticResource RoundedButtonStyle}" 
+                        Background="Gray" Click="GoBackButton_Click" Width="70" Height="30" Margin="15" Foreground="White"/>
+                <TextBlock Grid.Column="1" Text="MARATHON SKILLS 2016" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontWeight="Bold" Foreground="White"/>
-                <Button Content="Logout" Style="{StaticResource RoundedButtonStyle}" 
-                        Background="Gray" Click="LogoutButton_Click" Width="70" Height="30" Margin="330,0,0,0"/>
-            </StackPanel>
+                <Button Grid.Column="2" Content="Logout" Style="{StaticResource RoundedButtonStyle}" 
+                        Background="Transparent" Click="LogoutButton_Click" Width="70" Height="30"  Foreground="Transparent" BorderBrush="Transparent"/>
         </Grid>
 
         <!-- Фильтры -->
@@ -73,9 +76,9 @@
                 </ComboBox>
 
                 <!-- Кнопки -->
-                <Button Content="Поиск" Grid.Column="4" Grid.Row="1" Style="{StaticResource RoundedButtonStyle}" 
+                <Button Content="Поиск" Grid.Column="4" Grid.Row="1" Style="{StaticResource RoundedButtonStyle}" Foreground="white" 
                 Background="Gray" Click="SearchButton_Click" Width="80" Height="30"/>
-                <Button Content="Сбросить" Grid.Column="4" Grid.Row="0" Style="{StaticResource RoundedButtonStyle}" 
+                <Button Content="Сбросить" Grid.Column="4" Grid.Row="0" Style="{StaticResource RoundedButtonStyle}" Foreground="White" 
                 Background="Gray" Click="ResetFiltersButton_Click" Width="80" Height="30" Margin="5,0,0,5"/>
             </Grid>
         </Border>
